@@ -1,0 +1,20 @@
+/* style.sass */
+.complete {
+  background: #dddddd; }
+  .complete .title {
+    text-decoration: line-through; }
+
+body {
+  font-family: arial;
+  padding: 0px;
+  margin: 0px; }
+
+#content {
+  padding: 10px; }
+
+#banner {
+  height: 50px;
+  border-bottom: 2px solid #777777;
+  background: #aaaabb;
+  text-align: center;
+  font-size: 24px; }

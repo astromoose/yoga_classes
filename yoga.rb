@@ -2,6 +2,7 @@ require 'rubygems'
 require 'sinatra/base'
 require 'haml'
 require 'yaml'
+
 require 'awesome_print'
 
 class Yoga < Sinatra::Base
@@ -38,7 +39,7 @@ class Yoga < Sinatra::Base
 
   get "/" do
     @classes = get_classes
-    haml :classes
+    haml :index
   end
 
   post "/" do
@@ -50,5 +51,4 @@ class Yoga < Sinatra::Base
     promote(params[:student], params[:yoga_class])
     redirect "/"
   end
-
 end
