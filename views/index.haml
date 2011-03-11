@@ -1,12 +1,27 @@
+- colwidth = 95/@classes.count
+%p= "There are " + @classes.count.to_s + " Yoga classes available."
+
+%style{ :type => 'text/css' }
+  :sass
+    column
+      :width #{colwidth}%
+      :display inline
+      :float left
+      :border-left-style dashed 
+      :border-left-width thin
+
 - @classes.each do |yoga_class, student|
-  %h2= yoga_class 
-  - student.each do |s|
-    =s
-    %form(action='/' method='post')
-      %input(type='hidden' name='student' value=s)
-      %input(type='hidden' name='yoga_class' value=yoga_class)
-      %input(type='submit' value='unsubscribe')
-    %form(action='/promote' method='post')
-      %input(type='hidden' name='student' value=s)
-      %input(type='hidden' name='yoga_class' value=yoga_class)
-      %input(type='submit' value='promote')
+  %column
+    #classes
+      #classes.classtitle= yoga_class 
+      - student.each do |s|
+        #classes.student
+          %p= s
+          %form(action='/' method='post')
+            %input(type='hidden' name='student' value=s)
+            %input(type='hidden' name='yoga_class' value=yoga_class)
+            %input(type='submit' value='unsubscribe')
+          %form(action='/promote' method='post')
+            %input(type='hidden' name='student' value=s)
+            %input(type='hidden' name='yoga_class' value=yoga_class)
+            %input(type='submit' value='promote')

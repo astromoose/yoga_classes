@@ -2,7 +2,11 @@
 %html
   %head
     %title Yoga Class Tracker
-    %link{:rel=>'stylesheet', :href=>'/stylesheets/style.css', :type => "text/css"}       
+    %link{:rel=>'stylesheet', :href=>'/stylesheets/style.css', :type => "text/css"}
   %body
-    #banner Yoga Classes
-    = yield
+    %div.header Yoga Classes
+    %div.mask 
+      %div.content
+        = yield
+    %div.footer 
+      %p© The Dee Tee Oh Tee Cee Boys, 2011 and beyond
