@@ -7,8 +7,9 @@
       :width #{colwidth}%
       :display inline
       :float left
-      :border-left-style dashed 
-      :border-left-width thin
+      :border-right-color #ddd
+      :border-right-style dashed 
+      :border-right-width thin
 
 - @classes.each do |yoga_class, student|
   %column
@@ -25,3 +26,4 @@
             %input(type='hidden' name='student' value=s)
             %input(type='hidden' name='yoga_class' value=yoga_class)
             %input(type='submit' value='promote')
+	    
