@@ -7,7 +7,7 @@
       :width #{colwidth}%
       :display inline
       :float left
-      :border-right-color #ddd
+      :border-right-color #555
       :border-right-style dashed 
       :border-right-width thin
 
@@ -19,14 +19,14 @@
         #classes.student
           %p= s.capitalize
           #classes.controls
-            %ul
-              %li.inline
+            %tr
+              %td
                 %form(action='/' method='post')
                   %input(type='hidden' name='student' value=s)
                   %input(type='hidden' name='yoga_class' value=yoga_class)
-                  %input(type='submit' class='button green' value='unsubscribe')
-              %li.inline
+                  %input(type='submit' class='button blue' value='unsubscribe')
+              %td
                 %form(action='/promote' method='post')
                   %input(type='hidden' name='student' value=s)
                   %input(type='hidden' name='yoga_class' value=yoga_class)
-                  %input(type='submit' class='button green' value='promote')
+                  %input(type='submit' class='button blue' value='promote')

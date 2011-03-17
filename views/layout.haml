@@ -5,9 +5,11 @@
     %link{:rel=>'stylesheet', :href=>'/stylesheets/style.css', :type => "text/css"}
     %link{:rel=>'stylesheet', :href=>'/stylesheets/buttons.css', :type => "text/css"}
   %body
-    %div.header Yoga Classes
+    %div.header
+      %img{:src => '/images/header_magick2.png', :alt => 'Magick'}
+    %div.nav
     %div.mask 
       %div.content
         = yield
     %div.footer 
-      %p© The Dee Tee Oh Tee Cee Boys, 2011 and beyond
+      %img{:src => '/images/footer_quote_magick.png', :alt => 'Magick'}
