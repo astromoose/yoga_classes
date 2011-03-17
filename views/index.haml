@@ -14,19 +14,16 @@
 - @classes.each do |yoga_class, student|
   %column
     #classes
-      #classes.classtitle= yoga_class 
+      #classes.title= yoga_class 
       - student.each do |s|
-        #classes.student
+        #student
           %p= s.capitalize
-          #classes.controls
-            %tr
-              %td
-                %form(action='/' method='post')
-                  %input(type='hidden' name='student' value=s)
-                  %input(type='hidden' name='yoga_class' value=yoga_class)
-                  %input(type='submit' class='button blue' value='unsubscribe')
-              %td
-                %form(action='/promote' method='post')
-                  %input(type='hidden' name='student' value=s)
-                  %input(type='hidden' name='yoga_class' value=yoga_class)
-                  %input(type='submit' class='button blue' value='promote')
+          #student.controls
+            %form(action='/' method='post')
+              %input(type='hidden' name='student' value=s)
+              %input(type='hidden' name='yoga_class' value=yoga_class)
+              %input(type='submit' class='button blue' value='unsubscribe')
+            %form(action='/promote' method='post')
+              %input(type='hidden' name='student' value=s)
+              %input(type='hidden' name='yoga_class' value=yoga_class)
+              %input(type='submit' class='button blue' value='promote')
