@@ -17,13 +17,16 @@
       #classes.classtitle= yoga_class 
       - student.each do |s|
         #classes.student
-          %p= s
-          %form(action='/' method='post')
-            %input(type='hidden' name='student' value=s)
-            %input(type='hidden' name='yoga_class' value=yoga_class)
-            %input(type='submit' value='unsubscribe')
-          %form(action='/promote' method='post')
-            %input(type='hidden' name='student' value=s)
-            %input(type='hidden' name='yoga_class' value=yoga_class)
-            %input(type='submit' value='promote')
-	    
+          %p= s.capitalize
+          #classes.controls
+            %ul
+              %li.inline
+                %form(action='/' method='post')
+                  %input(type='hidden' name='student' value=s)
+                  %input(type='hidden' name='yoga_class' value=yoga_class)
+                  %input(type='submit' class='button green' value='unsubscribe')
+              %li.inline
+                %form(action='/promote' method='post')
+                  %input(type='hidden' name='student' value=s)
+                  %input(type='hidden' name='yoga_class' value=yoga_class)
+                  %input(type='submit' class='button green' value='promote')
